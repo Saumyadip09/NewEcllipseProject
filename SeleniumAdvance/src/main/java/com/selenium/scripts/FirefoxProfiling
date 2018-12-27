@@ -1,0 +1,30 @@
+ In the run section
+ firefox.exe -p profilemanager
+ 
+ profile means new instance of the browser...
+ each and every instance will be a fresh instance..
+ Normally when the firefox is installed there is a default profile created.
+ In the default profile we generally add the firepath or firebug.
+ 
+ I can add one more profile in the profile window.
+ (If we open it,it will be fresh and no details will be there).
+ This profiling is present only in the Firefox.
+ 
+ 
+ Why it is needed.
+ 
+ (WebDriver driver = new FirefoxDriver();
+ driver.navigate().to("https://www.google.com");)//The firefox instance will be a fresh instance created by selenium
+ 
+ The problem with this is (bookmark,proxy settins,firepath,firebug)...these can't be use that.
+ 
+ It is difficult to debug from that window.()
+ 
+ 
+ 
+ How to resolve it::::
+ 
+ ProfileIni is the class in Selenium which creates a profile.
+ 
+ ProfileIni profile = new ProfileIni();
+ FirefoxProfile myProfile = profile.getProfile("default");
